@@ -18,3 +18,11 @@ stages:
     outs:
     - data/raw/processed/test_processed.csv
     - data/raw/processed/train_processed.csv
+  model_building:
+    cmd: python -m src.model_building
+    deps:
+    - data/raw/processed/test_processed.csv
+    - data/raw/processed/train_processed.csv
+    - src/model_building.py
+    outs:
+    - data/raw/model/model.pkl
